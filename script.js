@@ -4,10 +4,8 @@ const profil = {
   prodi: "Pendidikan Teknologi Informasi",
   kampus: "Universitas Sulawesi Barat",
   email: "nirmalailaa915@gmail.com",
-  github: "https://github.com/ilaiiii51595-cpu"
+  github: "https://github.com/nirmaladwi"
 };
-
-// Daftar destinasi wisata. Cek dan sesuaikan isinya dengan sumber/pengalamanmu.
 const destinasi = [
   {
     id: "palippis",
@@ -59,8 +57,6 @@ const destinasi = [
   }
 ];
 
-// ---------------------- BAGIAN 2: TAMPILAN ----------------------
-// Isi semua elemen bertanda data-profil="nama|nim|prodi|kampus|email"
 document.querySelectorAll("[data-profil]").forEach(function (el) {
   const kunci = el.getAttribute("data-profil");
   if (profil[kunci]) el.textContent = profil[kunci];
@@ -70,7 +66,6 @@ document.querySelectorAll("[data-href-profil]").forEach(function (el) {
   el.href = kunci === "email" ? "mailto:" + profil.email : profil[kunci];
 });
 
-// Template kartu destinasi (dipakai di Beranda dan halaman Destinasi)
 function kartuDestinasi(d, kolom) {
   return '<div class="' + kolom + '">' +
     '<div class="card kartu-wisata h-100">' +
@@ -133,7 +128,7 @@ if (document.getElementById("formLogin")) {
 
   form.addEventListener("submit", function (e) {
     e.preventDefault(); // form tidak diproses kalau ada yang tidak valid
-    // map dulu (semua dicek) baru every, supaya semua pesan error muncul sekaligus
+    
     const semuaValid = aturan.map(periksa).every(Boolean);
     if (semuaValid) {
       alertBs("success", "<strong>Berhasil!</strong> Semua isian memenuhi validasi.");
@@ -144,10 +139,8 @@ if (document.getElementById("formLogin")) {
     }
   });
 
-  // Validasi langsung saat mengetik
   aturan.forEach(function (a) { a.input.addEventListener("input", function () { periksa(a); }); });
 
-  // Checkbox tampilkan password
   document.getElementById("lihat").addEventListener("change", function () {
     document.getElementById("password").type = this.checked ? "text" : "password";
   });
