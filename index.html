@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jelajah Sulbar - Beranda</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span><i class="bi bi-compass"></i> Jelajah Sulbar</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Buka menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li><li class="nav-item"><a class="nav-link" href="destinasi.html">Destinasi</a></li><li class="nav-item"><a class="nav-link" href="detail.html">Detail</a></li><li class="nav-item"><a class="nav-link" href="tentang.html">Tentang</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-aksen btn-sm" href="login.html">Masuk</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="badge badge-aksen rounded-pill mb-3 px-3 py-2">Informasi Wisata Daerah</span>
+        <h1>Jelajahi <span class="teks-gradien">Keindahan Sulawesi Barat</span></h1>
+        <p class="lead text-body-secondary mt-3">Temukan pantai, pulau, dan tempat menarik di Mamuju, Majene, dan Polewali Mandar dalam satu website.</p>
+        <a href="destinasi.html" class="btn btn-aksen btn-lg me-2 mt-2">Lihat Destinasi</a>
+        <a href="tentang.html" class="btn btn-outline-aksen btn-lg mt-2">Tentang Website</a>
+      </div>
+      <div class="col-lg-5"><div class="avatar"><i class="bi bi-geo-alt-fill"></i></div></div>
+    </div>
+  </div>
+</header>
+
+<section class="py-5">
+  <div class="container">
+    <h2 class="judul-bagian mb-4">Kenapa Jelajah Sulbar?</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="panel p-4 h-100"><h5><i class="bi bi-geo-alt text-info"></i> Informasi Lokasi</h5><p class="text-body-secondary mb-0">Setiap destinasi dilengkapi asal kabupaten dan gambaran singkat.</p></div></div>
+      <div class="col-md-4"><div class="panel p-4 h-100"><h5><i class="bi bi-lightbulb text-info"></i> Tips Berkunjung</h5><p class="text-body-secondary mb-0">Saran praktis agar perjalananmu lebih nyaman dan aman.</p></div></div>
+      <div class="col-md-4"><div class="panel p-4 h-100"><h5><i class="bi bi-phone text-info"></i> Nyaman di Semua Layar</h5><p class="text-body-secondary mb-0">Tampilan responsif untuk ponsel maupun komputer.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-4">
+      <h2 class="judul-bagian mb-0">Destinasi Pilihan</h2>
+      <a href="destinasi.html" class="link-info text-decoration-none">Lihat semua <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="row g-4" id="pilihan"></div>
+  </div>
+</section>
+<footer class="py-4 mt-5">
+  <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+    <span>&copy; 2026 Jelajah Sulbar &middot; Dibuat oleh <span data-profil="nama"></span> (<span data-profil="nim"></span>) &middot; UTS Pemrograman Web, PTI Universitas Sulawesi Barat</span>
+    <span><a href="destinasi.html">Destinasi</a> &middot; <a href="tentang.html">Tentang</a> &middot; <a href="login.html">Masuk</a></span>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+  document.getElementById("pilihan").innerHTML = destinasi.slice(0, 3).map(function (d) { return kartuDestinasi(d, "col-md-4"); }).join("");
+</script>
+</body>
+</html>

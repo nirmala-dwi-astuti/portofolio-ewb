@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jelajah Sulbar - Tentang</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span><i class="bi bi-compass"></i> Jelajah Sulbar</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Buka menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li><li class="nav-item"><a class="nav-link" href="destinasi.html">Destinasi</a></li><li class="nav-item"><a class="nav-link" href="detail.html">Detail</a></li><li class="nav-item"><a class="nav-link active" href="tentang.html">Tentang</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-aksen btn-sm" href="login.html">Masuk</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container">
+    <nav aria-label="breadcrumb"><ol class="breadcrumb mb-2">
+      <li class="breadcrumb-item"><a href="index.html">Beranda</a></li><li class="breadcrumb-item active">Tentang</li>
+    </ol></nav>
+    <h1 class="fw-bold" id="judul">Tentang Website</h1>
+    <p class="text-body-secondary mb-0">Mengenal Jelajah Sulbar dan pembuatnya.</p>
+  </div>
+</header>
+<main class="py-4">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <h3 class="judul-bagian mb-3">Tentang Jelajah Sulbar</h3>
+        <p>Jelajah Sulbar adalah website informasi wisata daerah yang dibuat sebagai proyek Ujian Tengah Semester mata kuliah Pemrograman Web, Program Studi Pendidikan Teknologi Informasi, Universitas Sulawesi Barat.</p>
+        <p>Tujuannya memperkenalkan tempat-tempat menarik di Sulawesi Barat dalam tampilan yang rapi, mudah dibaca, dan nyaman dibuka dari ponsel maupun komputer.</p>
+        <h3 class="judul-bagian mt-5 mb-3">Pertanyaan Umum</h3>
+        <div class="accordion" id="faq">
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1">Teknologi apa yang dipakai?</button></h2>
+            <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faq"><div class="accordion-body">HTML, CSS, Bootstrap 5, dan JavaScript.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">Apakah informasinya lengkap?</button></h2>
+            <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Informasi bersifat ringkasan umum. Periksa kondisi terbaru sebelum berkunjung.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">Apakah halaman login aman?</button></h2>
+            <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Tidak. Halaman login hanya demo validasi form di browser, bukan sistem keamanan sebenarnya.</div></div></div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="panel p-4">
+          <h5 class="mb-3">Profil Pembuat</h5>
+          <table class="table table-sm mb-3"><tbody>
+            <tr><th scope="row">Nama</th><td data-profil="nama"></td></tr>
+            <tr><th scope="row">NIM</th><td data-profil="nim"></td></tr>
+            <tr><th scope="row">Prodi</th><td data-profil="prodi"></td></tr>
+            <tr><th scope="row">Kampus</th><td data-profil="kampus"></td></tr>
+            <tr><th scope="row">Email</th><td><a class="link-info" data-href-profil="email" data-profil="email"></a></td></tr>
+          </tbody></table>
+          <a class="btn btn-outline-aksen w-100" data-href-profil="github" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="py-4 mt-5">
+  <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+    <span>&copy; 2026 Jelajah Sulbar &middot; Dibuat oleh <span data-profil="nama"></span> (<span data-profil="nim"></span>) &middot; UTS Pemrograman Web, PTI Universitas Sulawesi Barat</span>
+    <span><a href="destinasi.html">Destinasi</a> &middot; <a href="tentang.html">Tentang</a> &middot; <a href="login.html">Masuk</a></span>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

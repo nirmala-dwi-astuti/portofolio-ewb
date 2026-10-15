@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+/* =====================================================
+   TEMA "SEGAR PANTAI" - terang, santai, dan fresh
+   Ganti warna cukup di bagian :root di bawah ini.
+   ===================================================== */
+:root {
+  --bg: #f4fbfa;            /* latar halaman (mint sangat muda) */
+  --kartu: #ffffff;         /* latar kartu dan panel */
+  --garis: rgba(15, 60, 70, 0.10);
+  --aksen: #5eead4;         /* mint segar */
+  --aksen-2: #7dd3fc;       /* biru langit */
+  --aksen-3: #fde68a;       /* kuning pasir */
+  --tinta: #0b3b4a;         /* teks pada tombol terang */
+  --teks: #1f3a44;
+  --teks-lembut: #4f6f7a;
+  --tegas: #0e7490;         /* teal tua untuk tautan dan ikon */
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+  color: var(--teks);
+  background:
+    radial-gradient(800px 420px at 90% -5%, rgba(125, 211, 252, 0.35), transparent 60%),
+    radial-gradient(700px 420px at -5% 35%, rgba(94, 234, 212, 0.25), transparent 60%),
+    radial-gradient(700px 420px at 70% 105%, rgba(253, 230, 138, 0.28), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+.text-body-secondary { color: var(--teks-lembut) !important; }
+.text-info { color: var(--tegas) !important; }
+::selection { background: var(--aksen); color: var(--tinta); }
+
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--garis);
+}
+
+.navbar-brand span {
+  background: linear-gradient(90deg, #0d9488, #0284c7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.nav-link { color: var(--teks-lembut) !important; transition: color 0.2s; }
+.nav-link:hover { color: var(--teks) !important; }
+.nav-link.active { color: var(--tegas) !important; font-weight: 600; }
+
+
+/* ---------- Tombol, lencana, teks gradasi ---------- */
+.btn-aksen {
+  background: linear-gradient(135deg, var(--aksen), var(--aksen-2));
+  border: 0;
+  border-radius: 999px;
+  color: var(--tinta);
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.22);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+.btn-aksen:hover {
+  color: var(--tinta);
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+  box-shadow: 0 10px 24px rgba(14, 165, 233, 0.3);
+}
+
+.btn-outline-aksen {
+  background: transparent;
+  border: 1.5px solid #0d9488;
+  border-radius: 999px;
+  color: #0f766e;
+  font-weight: 500;
+}
+.btn-outline-aksen:hover { background: #0d9488; border-color: #0d9488; color: #fff; }
+
+.btn-outline-secondary {
+  border-color: var(--garis);
+  border-radius: 999px;
+  color: var(--teks-lembut);
+  background: #fff;
+}
+.btn-outline-secondary:hover { background: #e6f7f5; border-color: var(--garis); color: var(--teks); }
+
+.badge-aksen {
+  background: rgba(20, 184, 166, 0.14);
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  color: #0f766e;
+  font-weight: 500;
+}
+
+.teks-gradien {
+  background: linear-gradient(90deg, #0d9488, #0284c7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.link-info { color: var(--tegas) !important; }
+
+
+/* ---------- Hero & ikon besar ---------- */
+.hero { padding: 6.5rem 0 4rem; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 800; line-height: 1.15; color: var(--teks); }
+
+.avatar {
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 5.5rem;
+  color: #0f766e;
+  background: linear-gradient(135deg, var(--aksen), var(--aksen-2) 65%, var(--aksen-3));
+  box-shadow: 0 0 0 10px rgba(94, 234, 212, 0.25), 0 18px 50px rgba(14, 165, 233, 0.25);
+  animation: melayang 6s ease-in-out infinite;
+}
+@keyframes melayang { 50% { transform: translateY(-12px); } }
+
+
+/* ---------- Judul bagian & breadcrumb ---------- */
+.judul-bagian { font-weight: 700; color: var(--teks); }
+.judul-bagian::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 4px;
+  margin-top: 0.55rem;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #14b8a6, #38bdf8);
+}
+
+.page-header { padding: 3.5rem 0 1.5rem; }
+.page-header h1 { color: var(--teks); }
+.breadcrumb a { color: var(--tegas); text-decoration: none; }
+.breadcrumb-item.active, .breadcrumb-item + .breadcrumb-item::before { color: var(--teks-lembut); }
+
+
+/* ---------- Kartu destinasi ---------- */
+.kartu-wisata {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  color: var(--teks);
+  box-shadow: 0 4px 16px rgba(15, 60, 70, 0.06);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.kartu-wisata:hover {
+  transform: translateY(-8px);
+  border-color: rgba(20, 184, 166, 0.5);
+  box-shadow: 0 18px 36px rgba(15, 60, 70, 0.14);
+}
+
+.thumb {
+  position: relative;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 3.2rem;
+  color: #0f766e;
+  background: linear-gradient(135deg, #99f6e4, #7dd3fc 60%, #fde68a);
+}
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.thumb.besar { height: 330px; border-radius: 1.25rem; }
+
+
+/* ---------- Panel, tabel, accordion ---------- */
+.panel {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 16px rgba(15, 60, 70, 0.06);
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--teks);
+  --bs-table-border-color: var(--garis);
+}
+
+.accordion {
+  --bs-accordion-bg: var(--kartu);
+  --bs-accordion-color: var(--teks);
+  --bs-accordion-border-color: var(--garis);
+  --bs-accordion-btn-bg: var(--kartu);
+  --bs-accordion-btn-color: var(--teks);
+  --bs-accordion-active-bg: #e6f7f5;
+  --bs-accordion-active-color: #0f766e;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(20, 184, 166, 0.25);
+}
+
+
+/* ---------- Form login ---------- */
+.login-wrap { min-height: 78vh; display: flex; align-items: center; }
+
+.form-control {
+  padding: 0.7rem 1rem;
+  background: #fff;
+  border: 1px solid rgba(15, 60, 70, 0.18);
+  border-radius: 0.8rem;
+  color: var(--teks);
+}
+.form-control::placeholder { color: #86a1aa; }
+.form-control:focus {
+  background: #fff;
+  border-color: #14b8a6;
+  color: var(--teks);
+  box-shadow: 0 0 0 0.2rem rgba(20, 184, 166, 0.22);
+}
+.form-check-input:checked { background-color: #0d9488; border-color: #0d9488; }
+
+
+/* ---------- Footer ---------- */
+footer {
+  background: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid var(--garis);
+  color: var(--teks-lembut);
+}
+footer a { color: var(--tegas); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+
+/* Matikan animasi jika diminta pengguna */
+@media (prefers-reduced-motion: reduce) {
+  .avatar { animation: none; }
+  * { transition: none !important; }
+}
