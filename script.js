@@ -4,7 +4,7 @@ const profil = {
   prodi: "Pendidikan Teknologi Informasi",
   kampus: "Universitas Sulawesi Barat",
   email: "nirmalailaa915@gmail.com",
-  github: "https://github.com/nirmaladwi"
+  github: "https://github.com/nirmala-dwi-astuti"
 };
 const destinasi = [
   {
